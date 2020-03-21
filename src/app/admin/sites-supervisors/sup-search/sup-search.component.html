@@ -1,0 +1,31 @@
+<div class="search">
+    <form method="POST"  action="#">
+        <div>
+            <span>
+                <input 
+                style="width: 82px;margin-bottom: 5px;" 
+                type="text" 
+                [(ngModel)] = "SiteSupSearchResult.Phone" 
+                name="Phone" 
+                placeholder="Phone" 
+                class="input-small search-input">
+            </span>
+             <span>
+                <input 
+                style="width: 82px;margin-bottom: 5px;" 
+                type="text" 
+                [(ngModel)] = "SiteSupSearchResult.Name" 
+                name="Name" 
+                placeholder="Name" 
+                class="input-small search-input">
+            </span>
+            <span>
+                <select name="City" class="search-select" [(ngModel)] = "SiteSupSearchResult.City">
+                    <option disabled [ngValue]="null"> -- City --</option>
+                    <option *ngFor = " let city of Cities" [ngValue]="city.id">{{city.name}}</option>
+                </select>
+            </span>
+            <button  type="submit" class="btn search-button" (click)="showww()"> Serach</button>
+        </div>
+    </form>
+</div>
