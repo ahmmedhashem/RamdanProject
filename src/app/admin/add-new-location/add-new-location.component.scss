@@ -12,6 +12,27 @@
 
                             }
                         }
+                        .select-place-type-group{
+                            margin-bottom: 0;
+                
+                            .place-type{
+                                display: inline-block;
+                                width: 25%;
+                            }
+                            .Volhours{
+                                display: none;
+                                width: 60%;
+                                margin-left: 100px;
+                                label{
+                                    margin-right: 10px;
+                                }
+                                .hours-no{
+                                    width: 25%;
+                                    height: 35px;
+                                   display: inline-block;
+                                }
+                            }
+                        }
                         .requiredPerson{
                             width: 21%;
                             height: 30px;

@@ -22,7 +22,7 @@ export class AddNewLocationComponent implements OnInit {
   
 
   Result:  AddEditLocation[];
-  LocationDetailes : AddEditLocation = {NameEn : null, NameAr : null, Country : null, City : null, PersonReq : null, AllowTo : null, MapCode : null, Days : null, AlertMessEn : null, AlertMessAr : null, Active : null};
+  LocationDetailes : AddEditLocation = {NameEn : null, NameAr : null, Country : null, City : null, PersonReq : null, PlaceType : null, VolHours:null, MapCode : null, Days : null, AlertMessEn : null, AlertMessAr : null, Active : null};
 
 
 
@@ -54,6 +54,12 @@ export class AddNewLocationComponent implements OnInit {
 
     ]
 
+     //aray of Place Types
+     PlaceTyps = [
+      {id: 1 , name: "distribution"}, // for men & women
+      {id: 2 , name: "filling"}   // for women only
+      ]
+
   Days = ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30']
 
 
@@ -75,9 +81,9 @@ export class AddNewLocationComponent implements OnInit {
   }
 
   //to get the value of radio button
-  radioChangeHandeler(event:any){
-    this.LocationDetailes.AllowTo = event.target.value;
-  }
+  // radioChangeHandeler(event:any){
+  //   this.LocationDetailes.AllowTo = event.target.value;
+  // }
 
   //to get the value of radio button  -----> problem
   checkChangeHandeler(event:any){
@@ -160,6 +166,17 @@ export class AddNewLocationComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
+    //to show Voluntary hours when choose Place Type
+    $('select.place-type').change(function(){
+      var val = $(this).val();
+      console.log(val);
+      if(val == "dist"|| val == "fill"){
+          $(this).siblings('.Volhours').fadeIn(400);
+          $(this).siblings('.Volhours').css("display","inline-block");
+      }else 
+          $(this).siblings('.Volhours').fadeOut(400); 
+    });
     
   }
 

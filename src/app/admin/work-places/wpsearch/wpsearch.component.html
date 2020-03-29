@@ -14,7 +14,7 @@
                 </select>
             </span>
             <span id="refplaces" *ngIf="CityAdmin">
-                <select name="City" class="search-select" [(ngModel)] = "WPSearchResult.Place">
+                <select name="Place" class="search-select" [(ngModel)] = "WPSearchResult.Place">
                     <option disabled [ngValue]="null"> -- Place --</option>
                     <option *ngFor = " let place of Places" [ngValue]="place.id"> {{place.name}}</option>
                 </select>

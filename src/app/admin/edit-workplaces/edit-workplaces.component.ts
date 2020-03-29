@@ -19,7 +19,7 @@ export class EditWorkplacesComponent implements OnInit {
 
 
   Result:  AddEditLocation[];
-  LocationDetailes : AddEditLocation = {NameEn : null, NameAr : null, Country : null, City : null, PersonReq : null, AllowTo : null, MapCode : null, Days : null, AlertMessEn : null, AlertMessAr : null, Active : null};
+  LocationDetailes : AddEditLocation = {NameEn : null, NameAr : null, Country : null, City : null, PersonReq : null, PlaceType : null, VolHours : null, MapCode : null, Days : null, AlertMessEn : null, AlertMessAr : null, Active : null};
 
   constructor(private routte:ActivatedRoute , private myroutter:Router, private apiService: ApiService) { }
 
@@ -55,6 +55,8 @@ export class EditWorkplacesComponent implements OnInit {
 
     ]
 
+    
+
 
 
     //send Search data as object
@@ -68,14 +70,15 @@ export class EditWorkplacesComponent implements OnInit {
   ///test function
   showww(){
     console.log(this.LocationDetailes);
+    console.log($('select.place-type').val());
     
    
   }
 
-  //to get the value of radio button for allow to
-  radioGenderChangeHandeler(event:any){
-    this.LocationDetailes.AllowTo = event.target.value;
-  }
+  // //to get the value of radio button for allow to
+  // radioGenderChangeHandeler(event:any){
+  //   this.LocationDetailes.AllowTo = event.target.value;
+  // }
 
   //to get the value of radio button  -----> problem
   checkChangeHandeler(event:any){
@@ -95,6 +98,20 @@ export class EditWorkplacesComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
+
+     //to show Voluntary hours when choose Place Type
+     $('select.place-type').change(function(){
+      var val = $(this).val();
+      console.log(val);
+      if(val == "dist"|| val == "fill"){
+          $(this).siblings('.Volhours').fadeIn(400);
+          $(this).siblings('.Volhours').css("display","inline-block");
+      }else 
+          $(this).siblings('.Volhours').fadeOut(400); 
+    });
+
+
   }
 
 }

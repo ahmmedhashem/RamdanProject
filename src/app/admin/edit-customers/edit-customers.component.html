@@ -16,67 +16,98 @@
                               <span>x</span>
                           </div>
                         </div>
-                        <div class="card-body">
-                            <table class="table table-bordered">
-                                <tr>
-                                    <td class="title">Country</td>
-                                    <td class="data">
-                                        
-                                        <select class="form-control">
-                                            <option>Select Country</option>
-                                            <option>United Arab Emirates</option>
-                                            <option>Egypt</option>
-                                        </select>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="title">Agancy Name</td>
-                                    <td class="data">
-                                        <div class="english">
-                                            <label class="refer">
-                                                <img src="../../../assets/images/englishflag.png" alt="english flag" width="100%" height="100%">
-                                            </label>
-                                            <input type="text" class="form-control" name="EnCountryName" placeholder="Enter The Name In English">
-                                        </div>
-                                        <div class="arabic">
-                                            <label class="refer">
-                                                <img src="../../../assets/images/Arabic-Language-Flag.svg" alt="english flag" width="100%" height="100%">
-                                            </label>
-                                            <input type="text" class="form-control" name="ArCountryName" placeholder="Enter The Name In Arabic">
-                                        </div>
-                                        
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="title">Link</td>
-                                    <td class="data">
-                                        <input type="text" class="form-control link" name="link" placeholder="Enter The link">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="title">Image</td>
-                                    <td class="data">
-                                        <input type="file" name="file" id="file" class="inputfile chooseImage" />
-                                        <label class="choose" for="file"> <i class="fas fa-upload"></i>Choose a file</label>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="title">Active</td>
-                                    <td class="data">
-                                        <form class="status">
-                                            <input  type="radio" id="male" name="status" value="yes">
-                                            <label for="yes">Yes</label>
-                                            <input  type="radio" id="female" name="status" value="no">
-                                            <label for="no">No</label> 
-                                        </form>
-                                    </td>
-                                </tr>
-                            </table>
-                          
-                        </div>
-                        <div class="card-footer text-muted">
-                            <a href="#" class='btn btn-primary save-button'><i class="far fa-save"></i>Save</a>
-                        </div>
+                        <form>
+                            <div class="card-body">
+                                <table class="table table-bordered">
+                                    <tr>
+                                        <td class="title">Country</td>
+                                        <td class="data">
+                                            <select name="Country" class="form-control"  required [(ngModel)] = "AddEditCustomer.Country">  
+                                                <option disabled [ngValue]="null"> -- Country --</option>
+                                                <option *ngFor = " let country of Countries" [ngValue]="country.id">{{country.name}}</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="title">Agancy Name</td>
+                                        <td class="data">
+                                            <div class="english">
+                                                <label class="refer">
+                                                    <img src="../../../assets/images/englishflag.png" alt="english flag" width="100%" height="100%">
+                                                </label>
+                                                <input 
+                                                    type="text" 
+                                                    class="form-control" 
+                                                    [(ngModel)] = "AddEditCustomer.NameEn" 
+                                                    name="NameEn" 
+                                                    placeholder="Enter The Name In English">
+                                            </div>
+                                            <div class="arabic">
+                                                <label class="refer">
+                                                    <img src="../../../assets/images/Arabic-Language-Flag.svg" alt="english flag" width="100%" height="100%">
+                                                </label>
+                                                <input 
+                                                    type="text" 
+                                                    class="form-control" 
+                                                    [(ngModel)] = "AddEditCustomer.NameAr" 
+                                                    name="NameAr" 
+                                                    placeholder="Enter The Name In Arabic">
+                                            </div>
+                                            
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="title">Link</td>
+                                        <td class="data">
+                                            <input 
+                                                type="text" 
+                                                class="form-control link" 
+                                                [(ngModel)] = "AddEditCustomer.Link" 
+                                                name="Link" 
+                                                placeholder="Enter The link">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="title">Image</td>
+                                        <td class="data">
+                                            <input 
+                                                type="file" 
+                                                (change)="getFiles($event)" 
+                                                name="Image" 
+                                                id="file" 
+                                                class="inputfile chooseImage" />
+                                            <label class="choose" for="file"> <i class="fas fa-upload"></i>Choose a file</label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="title">Active</td>
+                                        <td class="data">
+                                            <div class="status">
+                                                <input  
+                                                    type="radio" 
+                                                    id="yes" 
+                                                    name="status" 
+                                                    value="yes" 
+                                                    (change)="radioStatusChangeHandeler($event)">
+                                                <label for="yes">Yes</label>
+                                                <input  
+                                                    type="radio" 
+                                                    id="no" 
+                                                    name="status" 
+                                                    value="no" 
+                                                    (change)="radioStatusChangeHandeler($event)">
+                                                <label for="no">no</label> 
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                              
+                            </div>
+                            <div class="card-footer text-muted">
+                                <button class='btn btn-primary save-button' (click)="showww()"><i class="far fa-save"></i>Save</button>
+                            </div>
+                        </form>
+
                     </div>
                 </div>
             </div>

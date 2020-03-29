@@ -16,69 +16,101 @@
                               <span>x</span>
                           </div>
                         </div>
-                        <div class="card-body">
-                            <table class="table table-bordered">
-                                <tr>
-                                    <td class="title">User Name</td>
-                                    <td class="data">
-                                        <form>
-                                            <input type="text" name="username" class="form-control" placeholder="Enter The User Name">
-                                        </form>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="title">Password</td>
-                                    <td class="data">
-                                        <form>
-                                            <input type="password" class="form-control password" name="password" placeholder="Enter The Password">
-                                            <i class="show-pass fa fa-eye fa-2x"></i>
-                                        </form>
+                        <form>
+                            <div class="card-body">
+                                <table class="table table-bordered">
+                                    <tr>
+                                        <td class="title">User Name</td>
+                                        <td class="data">
+                                       
+                                                <input 
+                                                    type="text" 
+                                                    name="Username"  
+                                                    [(ngModel)] = "AddEditCountrySuper.Username"
+                                                    class="form-control" 
+                                                    placeholder="Enter The User Name">
+                                    
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="title">Password</td>
+                                        <td class="data">
                                         
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="title">Full Name</td>
-                                    <td class="data">
-                                        <form>
-                                            <input type="text" name="fullname" class="form-control" placeholder="Enter The Full Name">
-                                        </form>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="title">Email</td>
-                                    <td class="data">
-                                        <form>
-                                            <input type="email" name="email" class="form-control" placeholder="Enter Valid Email">
-                                        </form>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="title">Country</td>
-                                    <td class="data">
-                                        <select name="Country" class="" >
-                                            <option disabled [ngValue]="null"> -- Country --</option>
-                                            <option *ngFor = " let country of Countries" [ngValue]="country.id">{{country.name}}</option>
-                                        </select>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="title">Active</td>
-                                    <td class="data">
-                                        <form class="status">
-                                            <input  type="radio" id="male" name="status" value="yes">
-                                            <label for="yes">Yes</label>
-                                            <input  type="radio" id="female" name="status" value="no">
-                                            <label for="no">No</label> 
-                                        </form>
-                                    </td>
-                                </tr>
-                                
-                            </table>
-                          
-                        </div>
-                        <div class="card-footer text-muted">
-                            <a href="#" class='btn btn-primary save-button'><i class="far fa-save"></i>Save</a>
-                        </div>
+                                                <input 
+                                                    type="password" 
+                                                    class="form-control password" 
+                                                    name="Password"  
+                                                    [(ngModel)] = "AddEditCountrySuper.Password" 
+                                                    placeholder="Enter The Password">
+                                                <i class="show-pass fa fa-eye fa-2x"></i>
+                                       
+                                            
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="title">Full Name</td>
+                                        <td class="data">
+                                      
+                                                <input 
+                                                    type="text" 
+                                                    name="Fullname"  
+                                                    [(ngModel)] = "AddEditCountrySuper.Fullname" 
+                                                    class="form-control" 
+                                                    placeholder="Enter The Full Name">
+                                   
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="title">Email</td>
+                                        <td class="data">
+                                    
+                                                <input 
+                                                    type="email" 
+                                                    name="Email"  
+                                                    [(ngModel)] = "AddEditCountrySuper.Email" 
+                                                    class="form-control" 
+                                                    placeholder="Enter Valid Email">
+                                       
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="title">Country</td>
+                                        <td class="data">
+                                            <select name = "Country" [(ngModel)] = "AddEditCountrySuper.Country" >
+                                                <option disabled [ngValue]="null"> -- Country --</option>
+                                                <option *ngFor = " let country of Countries" [ngValue]="country.id">{{country.name}}</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="title">Active</td>
+                                        <td class="data">
+                                            <div class="status">
+                                                <input  
+                                                    type="radio" 
+                                                    id="yes" 
+                                                    name="status" 
+                                                    value="yes" 
+                                                    (change)="radioStatusChangeHandeler($event)">
+                                                <label for="yes">Yes</label>
+                                                <input  
+                                                    type="radio" 
+                                                    id="no" 
+                                                    name="status" 
+                                                    value="no" 
+                                                    (change)="radioStatusChangeHandeler($event)">
+                                                <label for="no">no</label> 
+                                            </div>
+                                        </td>
+                                    </tr> 
+                                </table>
+                              
+                            </div>
+                            <div class="card-footer text-muted">
+                                <button class='btn btn-primary save-button' (click)="showww()"><i class="far fa-save"></i>Save</button>
+                            </div>
+                        </form>
+
                     </div>
                 </div>
             </div>

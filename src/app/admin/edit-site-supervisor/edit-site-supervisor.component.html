@@ -11,7 +11,7 @@
                 <div class="container">
                     <div class="card text-center">
                         <div class="card-header">
-                          <h3>EDIT MEMBER</h3>
+                          <h3>EDIT SITE SUPERVISOR</h3>
                           <div class="close" (click)="goback()">
                               <span>x</span>
                           </div>
@@ -23,7 +23,7 @@
                                         <td class="title">Type</td>
                                         <td class="data">
                                             
-                                            <select name = "Type" [(ngModel)] = "EditMembersVol.Type">
+                                            <select name = "Type" [(ngModel)] = "EditSiteSup.Type">
                                                 <option disabled [ngValue]="null">-- Type --</option>
                                                 <option  *ngFor = " let type of Types" [ngValue]="type">{{type}}</option>
                                             </select>
@@ -37,7 +37,7 @@
                                                     type="password" 
                                                     class="form-control password" 
                                                     name="Password"  
-                                                    [(ngModel)] = "EditMembersVol.Password"
+                                                    [(ngModel)] = "EditSiteSup.Password"
                                                     placeholder="Enter The Password">
                                                 <i class="show-pass fa fa-eye fa-2x"></i>
                                             </form>
@@ -56,7 +56,7 @@
                                                         <input 
                                                             type="text" 
                                                             name="FirstNameEn"  
-                                                            [(ngModel)] = "EditMembersVol.FirstNameEn"
+                                                            [(ngModel)] = "EditSiteSup.FirstNameEn"
                                                             class="form-control" 
                                                             placeholder="First name">
                                                     </div>
@@ -64,7 +64,7 @@
                                                         <input 
                                                             type="text" 
                                                             name="SecondNameEn"  
-                                                            [(ngModel)] = "EditMembersVol.SecondNameEn"
+                                                            [(ngModel)] = "EditSiteSup.SecondNameEn"
                                                             class="form-control" 
                                                             placeholder="Second name">
                                                     </div>
@@ -72,7 +72,7 @@
                                                         <input 
                                                             type="text" 
                                                             name="ThirdNameEn"  
-                                                            [(ngModel)] = "EditMembersVol.ThirdNameEn"
+                                                            [(ngModel)] = "EditSiteSup.ThirdNameEn"
                                                             class="form-control" 
                                                             placeholder="Third name">
                                                     </div>
@@ -80,7 +80,7 @@
                                                         <input 
                                                             type="text" 
                                                             name="FourthNameEn"  
-                                                            [(ngModel)] = "EditMembersVol.FourthNameEn"
+                                                            [(ngModel)] = "EditSiteSup.FourthNameEn"
                                                             class="form-control" 
                                                             placeholder="Last name">
                                                     </div>
@@ -95,7 +95,7 @@
                                                         <input 
                                                             type="text" 
                                                             name="FirstNameAr"  
-                                                            [(ngModel)] = "EditMembersVol.FirstNameAr"
+                                                            [(ngModel)] = "EditSiteSup.FirstNameAr"
                                                             class="form-control" 
                                                             placeholder="First name">
                                                     </div>
@@ -103,7 +103,7 @@
                                                         <input 
                                                             type="text" 
                                                             name="SecondNameAr"  
-                                                            [(ngModel)] = "EditMembersVol.SecondNameAr"
+                                                            [(ngModel)] = "EditSiteSup.SecondNameAr"
                                                             class="form-control" 
                                                             placeholder="Second name">
                                                     </div>
@@ -111,7 +111,7 @@
                                                         <input 
                                                             type="text" 
                                                             name="ThirdNameAr"  
-                                                            [(ngModel)] = "EditMembersVol.ThirdNameAr"
+                                                            [(ngModel)] = "EditSiteSup.ThirdNameAr"
                                                             class="form-control" 
                                                             placeholder="Third name">
                                                     </div>
@@ -119,7 +119,7 @@
                                                         <input 
                                                             type="text" 
                                                             name="FourthNameAr"  
-                                                            [(ngModel)] = "EditMembersVol.FourthNameAr"
+                                                            [(ngModel)] = "EditSiteSup.FourthNameAr"
                                                             class="form-control" 
                                                             placeholder="Last name">
                                                     </div>
@@ -134,7 +134,7 @@
                                                 type="text" 
                                                 class="form-control phoneNom" 
                                                 name="Phone"  
-                                                [(ngModel)] = "EditMembersVol.Phone"
+                                                [(ngModel)] = "EditSiteSup.Phone"
                                                 placeholder="Enter Phone Number">
                                         </td>
                                     </tr>
@@ -145,7 +145,7 @@
                                                 type="email" 
                                                 class="form-control email" 
                                                 name="Email"  
-                                                [(ngModel)] = "EditMembersVol.Email"
+                                                [(ngModel)] = "EditSiteSup.Email"
                                                 placeholder="Enter Email">
                                         </td>
                                     </tr>
@@ -170,34 +170,31 @@
                                             </div>
                                         </td>
                                     </tr>
-
                                     <tr>
                                         <td class="title">Membership Type</td>
                                         <td class="data">
                                             <div class="form-group select-mem-type-group">
-                                                <select class="form-control mem-type" name = "MemType" [(ngModel)] = "EditMembersVol.MemType" required> 
+                                                <select class="form-control mem-type" name = "MemType" [(ngModel)] = "EditSiteSup.MemType" required> 
                                                     <option selected disabled [ngValue]="null">-- Member Type --</option>
                                                     <option value="vol">Volunteer</option>
-                                                    <option value="sup">Site Supervisor</option>
-                                                   
+                                                    <option value="sup">Site Supervisor</option>       
                                                 </select>
                                                 <div class="place">
                                                     <label class="Registeration-lable" for="validationTooltip04">
-                                                        Place :
+                                                        Country :
                                                     </label>
-                                                    <select name="Country" class="select-place"  required [(ngModel)] = "EditMembersVol.Place">  
+                                                    <select name="Country" class="select-place"  required [(ngModel)] = "EditSiteSup.Place">  
                                                         <option disabled [ngValue]="null"> -- Place --</option>
                                                         <option *ngFor = " let loc of Locations" [ngValue]="loc.id">{{loc.name}}</option>
                                                     </select>
                                                 </div>
                                             </div>
                                         </td>
-                                    </tr>
-                                    
+                                    </tr>    
                                     <tr>
                                         <td class="title">Nationality</td>
                                         <td class="data">
-                                            <select class="form-control nationality" name = "Nationalty" [(ngModel)] = "EditMembersVol.Nationalty">
+                                            <select class="form-control nationality" name = "Nationalty" [(ngModel)] = "EditSiteSup.Nationalty">
                                                 <option disabled [ngValue]="null">-- Nationality --</option>
                                                 <option  *ngFor = " let nationality of Nationalities" [ngValue]="nationality.id">{{nationality.name}}</option>
                                             </select>
@@ -239,7 +236,7 @@
                                                 <textarea 
                                                     class="form-control" 
                                                     name="Notes"  
-                                                    [(ngModel)] = "EditMembersVol.Notes"
+                                                    [(ngModel)] = "EditSiteSup.Notes"
                                                     placeholder="Enter Notes....">
                                                 </textarea>
                                             </form>
@@ -256,8 +253,7 @@
                                             </div>
                                         </td>
                                     </tr>
-                                </table>
-                              
+                                </table>  
                             </div>
                             <div class="card-footer text-muted">
                                 <button class='btn btn-primary save-button' (click)="showww()"><i class="far fa-save"></i>Save</button>
@@ -267,9 +263,7 @@
                                     <h5>IP: <span class="ip"> 91.73.87.14</span></h5>
                                 </div>
                             </div>
-
                         </form>
-
                     </div>
                 </div>
             </div>

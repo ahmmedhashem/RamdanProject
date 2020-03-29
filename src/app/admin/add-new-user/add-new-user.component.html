@@ -16,69 +16,91 @@
                               <span>x</span>
                           </div>
                         </div>
-                        <div class="card-body">
-                            <table class="table table-bordered">
-                                <tr>
-                                    <td class="title">User Name</td>
-                                    <td class="data">
-                                        <form>
-                                            <input type="text" name="username" class="form-control" placeholder="Enter The User Name">
-                                        </form>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="title">Password</td>
-                                    <td class="data">
-                                        <form>
-                                            <input type="password" class="form-control password" name="password" placeholder="Enter The Password">
+                        <form>
+                            <div class="card-body">
+                                <table class="table table-bordered">
+                                    <tr>
+                                        <td class="title">User Name</td>
+                                        <td class="data">
+                                        
+                                            <input 
+                                                type="text" 
+                                                name="Username"  
+                                                [(ngModel)] = "AddNewUser.Username"
+                                                class="form-control" 
+                                                placeholder="Enter The User Name">
+                                      
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="title">Password</td>
+                                        <td class="data">
+                                   
+                                            <input 
+                                                type="password" 
+                                                class="form-control password" 
+                                                name="Password"  
+                                                [(ngModel)] = "AddNewUser.Password"
+                                                placeholder="Enter The Password">
                                             <i class="show-pass fa fa-eye fa-2x"></i>
-                                        </form>
+                                   
+                                            
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="title">Full Name</td>
+                                        <td class="data">
+                                    
+                                            <input 
+                                                type="text" 
+                                                name="FullName"  
+                                                [(ngModel)] = "AddNewUser.FullName"
+                                                class="form-control" 
+                                                placeholder="Enter The Full Name">
                                         
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="title">Full Name</td>
-                                    <td class="data">
-                                        <form>
-                                            <input type="text" name="fullname" class="form-control" placeholder="Enter The Full Name">
-                                        </form>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="title">Email</td>
-                                    <td class="data">
-                                        <form>
-                                            <input type="email" name="email" class="form-control" placeholder="Enter Valid Email">
-                                        </form>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="title">Type</td>
-                                    <td class="data">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="title">Email</td>
+                                        <td class="data">
                                         
-                                        <select class="type-of-user">
-                                            <option>Select Type Of User</option>
-                                            <option>Site Manager</option>
-                                            <option>Country Supervisor</option>
-                                            <option>City Supervisor</option>
-                                        </select>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="title">Country</td>
-                                    <td class="data">
-                                        <select class="form-control country">
-                                            <option>-- Country --</option>
-                                        </select>
-                                    </td>
-                                </tr>
-                                
-                            </table>
-                          
-                        </div>
-                        <div class="card-footer text-muted">
-                            <a href="#" class='btn btn-primary add-button'><i class="fas fa-plus"></i>Add</a>
-                        </div>
+                                            <input 
+                                                type="email" 
+                                                name="Email"  
+                                                [(ngModel)] = "AddNewUser.Email"
+                                                class="form-control" 
+                                                placeholder="Enter Valid Email">
+                                      
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="title">Type</td>
+                                        <td class="data">
+                                            
+                                            <select class="type-of-user" name = "Type" [(ngModel)] = "AddNewUser.Type">
+                                                <option disabled [ngValue]="null">-- Select Type --</option>
+                                                <option  *ngFor = " let type of UsersTypes" [ngValue]="type.id">{{type.name}}</option>
+                                            </select>
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="title">Country</td>
+                                        <td class="data">
+                                           <select class="form-control" name = "Country" [(ngModel)] = "AddNewUser.Country">
+                                                <option disabled [ngValue]="null">-- Country --</option>
+                                                <option  *ngFor = " let Country of Countries" [ngValue]="Country.id">{{Country.name}}</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    
+                                </table>
+                              
+                            </div>
+                            <div class="card-footer text-muted">
+                                <button class='btn btn-primary add-button' (click)="showww()"><i class="fas fa-plus"></i>Add</button>
+                            </div>
+                        </form>
+           
                     </div>
                 </div>
             </div>

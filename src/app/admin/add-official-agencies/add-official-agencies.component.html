@@ -16,43 +16,54 @@
                               <span>x</span>
                           </div>
                         </div>
-                        <div class="card-body">
-                            <table class="table table-bordered">
-                                <tr>
-                                    <td class="title">Country</td>
-                                    <td class="data">
-                                        
-                                        <select class="form-control">
-                                            <option>Select Country</option>
-                                            <option>United Arab Emirates</option>
-                                            <option>Egypt</option>
-                                        </select>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="title">Agancy Name</td>
-                                    <td class="data">
-                                        <div class="english">
-                                            <label class="refer">
-                                                <img src="../../../assets/images/englishflag.png" alt="english flag" width="100%" height="100%">
-                                            </label>
-                                            <input type="text" class="form-control" name="EnCountryName" placeholder="Enter The Name In English">
-                                        </div>
-                                        <div class="arabic">
-                                            <label class="refer">
-                                                <img src="../../../assets/images/Arabic-Language-Flag.svg" alt="english flag" width="100%" height="100%">
-                                            </label>
-                                            <input type="text" class="form-control" name="ArCountryName" placeholder="Enter The Name In Arabic">
-                                        </div>
-                                        
-                                    </td>
-                                </tr>
-                            </table>
-                          
-                        </div>
-                        <div class="card-footer text-muted">
-                            <a href="#" class='btn btn-primary add-button'><i class="fas fa-plus"></i>Add</a>
-                        </div>
+                        <form>
+                            <div class="card-body">
+                                <table class="table table-bordered">
+                                    <tr>
+                                        <td class="title">Country</td>
+                                        <td class="data">
+                                            <select class="form-control" name = "Country" [(ngModel)] = "AddEditAgancy.Country">
+                                                <option disabled [ngValue]="null">-- Country --</option>
+                                                <option  *ngFor = " let country of Countries" [ngValue]="country.id">{{country.name}}</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="title">Agancy Name</td>
+                                        <td class="data">
+                                            <div class="english">
+                                                <label class="refer">
+                                                    <img src="../../../assets/images/englishflag.png" alt="english flag" width="100%" height="100%">
+                                                </label>
+                                                <input 
+                                                    type="text" 
+                                                    class="form-control" 
+                                                    name="NameEn"  
+                                                    [(ngModel)] = "AddEditAgancy.NameEn"
+                                                    placeholder="Enter The Name In English">
+                                            </div>
+                                            <div class="arabic">
+                                                <label class="refer">
+                                                    <img src="../../../assets/images/Arabic-Language-Flag.svg" alt="english flag" width="100%" height="100%">
+                                                </label>
+                                                <input 
+                                                    type="text" 
+                                                    class="form-control" 
+                                                    name="NameAr"  
+                                                    [(ngModel)] = "AddEditAgancy.NameAr"
+                                                    placeholder="Enter The Name In Arabic">
+                                            </div>
+                                            
+                                        </td>
+                                    </tr>
+                                </table>
+                              
+                            </div>
+                            <div class="card-footer text-muted">
+                                <button class='btn btn-primary add-button' (click)="showww()"><i class="fas fa-plus"></i>Add</button>
+                            </div>
+                        </form>
+          
                     </div>
                 </div>
             </div>

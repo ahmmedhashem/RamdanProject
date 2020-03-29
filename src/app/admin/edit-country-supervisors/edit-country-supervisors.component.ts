@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { AddEditCountrySupervisor } from 'src/app/crud-class/policy';
+import { ApiService } from 'src/app/api-service/api.service';
 declare var $ :any;
 
 @Component({
@@ -12,6 +14,31 @@ export class EditCountrySupervisorsComponent implements OnInit {
   //control who log in and data to show
   OrgAdmins:boolean = true;
 
+
+  Result:  AddEditCountrySupervisor[];
+  AddEditCountrySuper : AddEditCountrySupervisor = {Username : null, Password : null, Fullname : null, Email : null,    Country : null, Status : null};
+
+
+  //send Search data as object
+  SendSearchDate(form){
+    this.apiService.AddEditCountrySupRequest(form.value).subscribe((policy: AddEditCountrySupervisor)=>{
+      console.log("Policy created, ", policy);
+    });
+  }
+
+
+
+
+  //to get the value of radio button for status
+  radioStatusChangeHandeler(event:any){
+    this.AddEditCountrySuper.Status = event.target.value;
+  }
+
+  ///test function
+  showww(){
+    console.log(this.AddEditCountrySuper);
+   
+  }
 
   //aray of countries
   Countries = [
@@ -37,7 +64,7 @@ export class EditCountrySupervisorsComponent implements OnInit {
     this.myroutter.navigate(['/CountrySupervisors'])
   }
 
-  constructor(private routte:ActivatedRoute , private myroutter:Router) { }
+  constructor(private routte:ActivatedRoute , private myroutter:Router, private apiService: ApiService) { }
 
   ngOnInit(): void {
     //to hide placeholder on form focus

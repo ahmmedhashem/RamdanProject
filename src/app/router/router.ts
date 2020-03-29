@@ -59,6 +59,7 @@ import { UserPrivilegesComponent } from '../admin/user-privileges/user-privilege
 import { AddNewUserComponent } from '../admin/add-new-user/add-new-user.component';
 import { EditAdminsUserComponent } from '../admin/edit-admins-user/edit-admins-user.component';
 import { AdminMyProfileComponent } from '../admin/admin-my-profile/admin-my-profile.component';
+import { EditSiteSupervisorComponent } from '../admin/edit-site-supervisor/edit-site-supervisor.component';
 
 
 
@@ -84,6 +85,7 @@ export const route:Routes = [
     {path:'Rate' , component:RateComponent},
     {path:'ViewRate' , component:ViewRateComponent},
     {path:'SitesSupervisors' , component:SitesSupervisorsComponent},
+    {path:'EditSitesSupervisors' , component:EditSiteSupervisorComponent},
     {path:'SupervisorWorkPlace' , component:SupWorkPlaceComponent},
     {path:'VolunteersNotes' , component:VolunteersNotesComponent},
     {path:'CitySupervisors' , component:CitySupervisorsComponent},

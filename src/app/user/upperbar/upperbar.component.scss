@@ -77,7 +77,7 @@ $upperbarFontColor : #2f3542;
                 padding: 8px 10px;
                 font-size: 13px;
                 font-weight: 500;
-                &:hover{
+                &:hover,&:focus{
                     background-color: $mainUserColor;
                     color: #FFF;
                 }

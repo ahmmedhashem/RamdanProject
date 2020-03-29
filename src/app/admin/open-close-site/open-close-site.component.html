@@ -11,19 +11,29 @@
                 <div class="container">
                     <div class="card text-center">
                         <div class="card-header">
-                          <h3>EDIT MEMBER</h3>
+                          <h3>OPEN / CLOSE SITE</h3>
                         </div>
                         <div class="card-body">
                             <table class="table table-bordered">
                                 <tr>
                                     <td class="title">Site Status</td>
                                     <td class="data">
-                                        <form class="gender">
-                                            <input  type="radio" id="open" name="Site-Status" value="open">
-                                            <label for="open">Open</label>
-                                            <input  type="radio" id="close" name="Site-Status" value="close">
-                                            <label for="close">Close</label> 
-                                        </form>
+                                        <div class="gender">
+                                            <input  
+                                                type="radio" 
+                                                id="open" 
+                                                name="SiteStatus" 
+                                                value="open" 
+                                                (change)="radioSiteStatusChangeHandeler($event)">
+                                            <label for="open">open</label>
+                                            <input  
+                                                type="radio" 
+                                                id="close" 
+                                                name="SiteStatus" 
+                                                value="close" 
+                                                (change)="radioSiteStatusChangeHandeler($event)">
+                                            <label for="close">close</label> 
+                                        </div>
                                     </td>
                                 </tr>
                                 <tr>
@@ -33,21 +43,31 @@
                                         <!-- full name in inglish-->
                                         <img class="for-defintion-en" src="../../../assets/images/englishflag.png" width="45px" height="30px">
                                         <div class="guide-en-message">Enter Message In English</div>
-                                        <form class="fullname">
-                                           <textarea class="form-control" name="closed-message-en" placeholder="Enter Message In English"></textarea>
-                                        </form>
+                                        <div class="fullname">
+                                           <textarea 
+                                                class="form-control" 
+                                                name="MessageEn"  
+                                                [(ngModel)] = "OpenCloseSite.MessageEn"
+                                                placeholder="Enter Message In English">
+                                            </textarea>
+                                        </div>
                                         <!--full name in arabic-->
                                         <img class="for-defintion-ar" src="../../../assets/images/Arabic-Language-Flag.svg" width="45px" height="30px">
                                         <div class="guide-ar-message">Enter Message In Arabic</div>
-                                        <form class="fullname">
-                                            <textarea class="form-control" name="closed-message-ar" placeholder="Enter Message In Arabic"></textarea>
-                                        </form>  
+                                        <div class="fullname">
+                                            <textarea 
+                                                class="form-control" 
+                                                name="MessageAr"  
+                                                [(ngModel)] = "OpenCloseSite.MessageAr"
+                                                placeholder="Enter Message In Arabic">
+                                            </textarea>
+                                        </div>  
                                     </td>
                                 </tr>
                             </table>
                         </div>
                         <div class="card-footer text-muted">
-                            <a href="#" class='btn btn-primary save-button'><i class="far fa-save"></i>Save</a>
+                            <button class='btn btn-primary save-button' (click)="showww()"><i class="far fa-save"></i>Save</button>
                         </div>
                     </div>
                 </div>

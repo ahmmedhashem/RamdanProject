@@ -6,20 +6,20 @@
             .table{
                 tr{
                     .data{
-                        form{
-                            textarea{
-                                width: 65%;
-                                height: 60px;
-                                font-size: 14px;
-                                &::placeholder{
-                                    font-size: 13px;
-                                }
+                      
+                        textarea{
+                            width: 65%;
+                            height: 60px;
+                            font-size: 14px;
+                            &::placeholder{
+                                font-size: 13px;
                             }
                         }
+                        
                         .guide-ar-message{
                             top: 132px;
                         }
-                        .list{
+                        .list1, .list2, .list3, .list4, .list5, .list6, .list7{
                             position: relative;
                             display: flow-root;
                             .english{
@@ -39,7 +39,7 @@
                                 .guide-ar-message{
                                     position: absolute;
                                     top: 10px;
-                                    left: 492px;
+                                    left: 517px;
                                     width: max-content;
                                     border-right: 5px solid #080;
                                     border-left: 1px solid #DDD;

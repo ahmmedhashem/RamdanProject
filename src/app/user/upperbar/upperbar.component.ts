@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../../api-service/api.service';
-import { Signup } from 'src/app/crud-class/policy';
+import { Signup, UserLogin } from 'src/app/crud-class/policy';
 declare var $ :any;
 
 
@@ -11,20 +11,115 @@ declare var $ :any;
 })
 export class UpperbarComponent implements OnInit {
 
+  // for sign up
   policies:  Signup[];
-  selectedPolicy:  Signup  = { id :  null , StNameEn: null , EdNameEn:null, RdNameEn:null, ThameEn:null, StNameAr:null, EdNameAr:null, RdNameAr:null, ThameAr:null, BirthDate:null,  Username:null, Phone:null, Email:null, Password:null};
+  SignupData:  Signup  = { id :  null , RegType: null, AgencyType: null, AcadimicId: null, StNameEn: null , EdNameEn:null, RdNameEn:null, ThameEn:null, StNameAr:null, EdNameAr:null, RdNameAr:null, ThameAr:null, BirthDate:null, Gender: null, Nationality: null, Country: null, City: null, NewsLetter : null,  Username:null, Phone:null, Email:null, Password:null, Terms: null};
 
 
+
+  // for login
+  policiess:  UserLogin[];
+  LoginData:  UserLogin  = {Username : null, Password : null, Remember : null };
+
+
+
+
+
+
+//aray of Cities
+Agancies= [
+  {id: 1, name: "Agancy1"},
+  {id: 2, name: "Agancy1"},
+  {id: 3, name: "Agancy1"},
+  {id: 4, name: "Agancy1"},
+  {id: 5, name: "Agancy1"},
+  {id: 6, name: "Agancy1"},
+  {id: 7, name: "it"},
+  {id: 8, name: "Agancy1"},
+  {id: 9, name: "Agancy1"}
+
+]
+
+
+
+  //aray of Cities
+Cities = [
+  {id: 1, name: "Cities1"},
+  {id: 2, name: "Cities2"},
+  {id: 3, name: "Cities3"},
+  {id: 4, name: "Cities4"},
+  {id: 5, name: "Cities5"},
+  {id: 6, name: "Cities6"},
+  {id: 7, name: "Cities7"},
+  {id: 8, name: "Cities8"},
+  {id: 9, name: "Cities9"}
+
+]
+
+
+ //aray of Nationalities
+ Nationalities = ["Egyption", "Engeland" , "American"];
+
+
+
+
+ //to get the value of radio button for gender
+ radioGenderChangeHandeler(event:any){
+  this.SignupData.Gender = event.target.value;
+}
+
+//to get the value of check box for news letter
+CheckNewsChangeHandeler(event:any){
+  this.SignupData.NewsLetter = event.srcElement.checked;
+}
+
+
+
+//to get the value of check box for terms
+CheckTermsChangeHandeler(event:any){
+  this.SignupData.Terms = event.srcElement.checked;
+}
+
+
+
+//to get the value of check box for remember
+CheckRememberChangeHandeler(event:any){
+  this.LoginData.Remember = event.srcElement.checked;
+}
 
  
 
 
 
 
+  //send Search data as object
+  SendSearchDate(form){
+    this.apiService.SignUpRequest(form.value).subscribe((policy: Signup)=>{
+      console.log("Policy created, ", policy);
+    });
+  }
+
+  ///test function
+  showww(){
+    console.log(this.SignupData);
+   
+  }
+
+
+  ///test function
+  showwww(){
+    console.log(this.LoginData);
+   
+  }
+
+
+
+
+
 //for add new data in database or update data
   createOrUpdatePolicy(form){
-    if(this.selectedPolicy && this.selectedPolicy.id){
-      form.value.id = this.selectedPolicy.id;
+    if(this.SignupData && this.SignupData.id){
+      form.value.id = this.SignupData.id;
       this.apiService.updatePolicy(form.value).subscribe((policy: Signup)=>{
         console.log("Policy updated" , policy);
       });
@@ -39,7 +134,7 @@ export class UpperbarComponent implements OnInit {
   }
 
   selectPolicy(policy: Signup){
-    this.selectedPolicy = policy;
+    this.SignupData = policy;
   }
 
 
@@ -122,13 +217,19 @@ export class UpperbarComponent implements OnInit {
 
      //to show id when choose IT
      $('select.select-agency').change(function(){
-      var val = $(this).val();
-      if(val === "it"){
+       
+      var vallll = $(this).val();
+      console.log(vallll);
+      if(vallll == "7: 7"){
           $('.acadimic-id').fadeIn(400);
           $('.acadimic-id').css("display","inline-block");
       }else 
           $('.acadimic-id').fadeOut(400); 
     });
+
+
+    
+
   }
 
 }

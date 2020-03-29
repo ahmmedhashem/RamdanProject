@@ -56,68 +56,175 @@ $upperbarFontColor : #2f3542;
                     margin-bottom: 30px;
                 }
                 .row{
-                    .days{
-                        padding: 30px 15px;
-
-                        .select-day{
-                            
-                            width: 120px;
-                            text-align: center;
-                            height: 110px;
-                            background-color: #00b894;
-                            position: relative;
+                    justify-content: center;
+                   
+                        
+                    .ramadan-days{ 
+                        width: 240px;
+                        text-align: center;
+                        height: 165px;
+                        position: relative;
+                        border-radius: 10px;
+                        margin: 10px;
+                        background-image: url("../../../assets/images/homeimage.png");
+                        background-repeat: no-repeat;
+                        background-size: cover;
+                        position: relative;
+                        .maincover{
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            background-color: #000;
+                            width: 100%;
+                            height: 100%;
+                            opacity: 0.5;
                             border-radius: 10px;
-                            margin: 10px;
-                            background-image: url("../../../assets/images/homeimage.png");
-                            background-repeat: no-repeat;
-                            background-size: cover;
-                            position: relative;
-                            .cover{
-                                position: absolute;
-                                top: 0;
-                                left: 0;
-                                background-color: #000;
-                                width: 100%;
-                                height: 100%;
-                                opacity: 0.8;
-                                border-radius: 10px;
-                            }
-                            .theday{
-                                position: absolute;
-                                right: 2px;
-                                top: 3px;
-                            } 
+                        }
+                        .chOpacity{
+                            opacity: 0.9;
+                        }
+                        .content{
+                          position: relative;
                             h4{
                                 font-size: 20px;
-                                line-height: 110px;
+                                line-height: 165px;
                                 font-weight: 600;
                                 color: #fff;
                                 position: relative;
                                 z-index: 9;
                             }
-                        }
-                        hr{
-                            margin-bottom: 20px;
-                        }
-                        a{
-                            display: block;
-                            text-align: left;
-                            width: max-content;
-                            font-size: 14px;
-                            font-weight: 600;
-                            border: 1px solid #857d33;
-                            margin-top: 10px;
-                            padding: 8px 15px;
-                            color: #857d33;
-                            border-radius: 5px;
-                            &:hover{
-                                background-color: $mainUserColor;
-                                color: #FFF;
+                            .location-type{
+                                position: absolute;
+                                bottom: 0px;
+                                left: 27px;
+                                display: none;
+                                z-index: 9;
+                                button{
+                                    font-size: 13px;
+                                    background-color: $mainUserColor;
+                                    color: #FFF;
+                                    width: 88px;
+                                    height: 36px;
+                                    margin-right: 5px;
+                                    margin-bottom: 10px;
+                                    
+                                }
                             }
-
+                            .cityLoc,.edit-day{
+                                position: absolute;
+                                padding: 10px;
+                                top: 0;
+                                width: 100%;
+                                height: 100%;
+                                z-index: 99;
+                                border-radius: 8px;
+                                border-bottom-left-radius: 0;
+                                border-bottom-right-radius: 0;
+                                display: none;
+                                .cover{
+                                    background-color: #000;
+                                    opacity: 0.9;
+                                    position: absolute;
+                                    top: 0;
+                                    left: 0;
+                                    width: 100%;
+                                    height: 100%;
+                                    border-radius: 10px;
+                                    border-bottom-left-radius: 0;
+                                    border-bottom-right-radius: 0;
+                                }
+                                form{
+                                    position: relative;
+                                    padding-top: 5px;
+                                   
+                                    .form-group{
+                                        select{
+                                            border: none;
+                                            border-bottom: 1px solid #FFF;
+                                            padding: 6px 5px;
+                                            background-color: unset;
+                                            font-size: 12px;
+                                            color: #FFF;
+                                            max-width: 140px;
+                                            width: 58%;
+                                            option{
+                                                background-color: #262627;
+                                            }
+                                        }
+                                    }
+                                    button{
+                                        font-size: 12px;
+                                        font-weight: 600;
+                                        width: auto;
+                                        height: auto;
+                                        background-color: #857d33;
+                                        color: #FFF;
+                                        border-radius: 0;
+                                        padding: 4px 35px;
+                                        margin-top: 7px;
+                                    }
+                                }
+                            }
+                            .edit-remove-day{
+                                position: absolute;
+                                bottom: 0px;
+                                left: 54px;
+                                z-index: 9;
+                                display: none;
+                               
+                                button{
+                                    font-size: 12px;
+                                    background-color: unset;
+                                    width: 66px;
+                                    height: 30px;
+                                    line-height: 30px;
+                                    padding: 0;
+                                    color: #FFF;
+                                    font-weight: 500;
+                                    margin-right: 5px;
+                                    margin-bottom: 10px;
+                                    position: relative;
+                                    .btn-couver-edit,.btn-couver-del{
+                                        position: absolute;
+                                        width: 100%;
+                                        height: 100%;
+                                        opacity: 0.5;
+                                    }
+                                    i{
+                                        margin-right: 3px;
+                                    }
+                                    
+                                }
+                                .btn-couver-edit{
+                                    background-color: $exprtButtonBg;
+                                }
+                                .btn-couver-del{
+                                    background-color: $buttonBg;
+                                }
+                            }
                         }
                         
                     }
+                  
+                    a{
+                        display: block;
+                        text-align: left;
+                        width: max-content;
+                        font-size: 14px;
+                        font-weight: 600;
+                        border: 1px solid #857d33;
+                        margin-top: 10px;
+                        padding: 8px 15px;
+                        color: #857d33;
+                        border-radius: 5px;
+                        &:hover{
+                            background-color: $mainUserColor;
+                            color: #FFF;
+                        }
+
+                    }
+                    
+                   
                 }
                 button{
                     background-size: cover;
@@ -165,4 +272,9 @@ $upperbarFontColor : #2f3542;
             }
         }
     }
+}
+
+
+.show{
+    display: inline-block!important;
 }

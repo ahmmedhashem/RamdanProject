@@ -77,16 +77,29 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td class="title">Allow To</td>
+                                        <td class="title">Place Type</td>
                                         <td class="data">
-                                            <form class="allowed">
-                                                <input  type="radio" id="all" name="allow" value="all" (change)="radioChangeHandeler($event)">
-                                                <label for="all">Men & Women</label>
-                                                <input  type="radio" id="men" name="allow" value="men" (change)="radioChangeHandeler($event)">
-                                                <label for="men">Men</label> 
-                                                <input  type="radio" id="women" name="allow" value="women" (change)="radioChangeHandeler($event)">
-                                                <label for="women">Women</label> 
-                                            </form>
+                                            <div class="form-group select-place-type-group">
+                                                <select class="form-control place-type" name = "PlaceType" [(ngModel)] = "LocationDetailes.PlaceType" required> 
+                                                    <option selected disabled [ngValue]="null">-- Place Type --</option>
+                                                    <option value="dist">distribution</option>
+                                                    <option value="fill">filling</option>
+                                                   
+                                                </select>
+                                                <div class="Volhours">
+                                                    <label>
+                                                        Voluntary hours :
+                                                    </label>
+                                                    <input 
+                                                        type="number" 
+                                                        class="hours-no form-control" 
+                                                        name="VolHours"  
+                                                        [(ngModel)] = "LocationDetailes.VolHours"
+                                                        min="1" 
+                                                        max="10" 
+                                                        value="1">
+                                                </div>    
+                                            </div>
                                         </td>
                                     </tr>
                                     <tr>

@@ -4,17 +4,15 @@ import { EditMemVol } from 'src/app/crud-class/policy';
 import { ApiService } from 'src/app/api-service/api.service';
 declare var $ :any;
 
+
 @Component({
-  selector: 'app-edit-members-volunteers',
-  templateUrl: './edit-members-volunteers.component.html',
-  styleUrls: ['./edit-members-volunteers.component.scss']
+  selector: 'app-edit-site-supervisor',
+  templateUrl: './edit-site-supervisor.component.html',
+  styleUrls: ['./edit-site-supervisor.component.scss']
 })
-export class EditMembersVolunteersComponent implements OnInit {
-
-
-
+export class EditSiteSupervisorComponent implements OnInit {
   Result:  EditMemVol[];
-  EditMembersVol : EditMemVol = {Type : null, Password : null, FirstNameEn : null, SecondNameEn : null,         ThirdNameEn : null, FourthNameEn : null, FirstNameAr : null, SecondNameAr : null, ThirdNameAr : null,   FourthNameAr : null, Phone : null, Email : null, Gender : null, MemType : null, Place : null, Nationalty : null, NewsLetter : null, Notes : null, Status : null};
+  EditSiteSup : EditMemVol = {Type : null, Password : null, FirstNameEn : null, SecondNameEn : null,         ThirdNameEn : null, FourthNameEn : null, FirstNameAr : null, SecondNameAr : null, ThirdNameAr : null,   FourthNameAr : null, Phone : null, Email : null, Gender : null, MemType : null, Place : null, Nationalty : null, NewsLetter : null, Notes : null, Status : null};
 
   //array of typies
   Types = ["Individual", "Family", "Agency"];
@@ -60,7 +58,7 @@ export class EditMembersVolunteersComponent implements OnInit {
 
   //send Search data as object
   SendSearchDate(form){
-    this.apiService.EditMemVolRequest(form.value).subscribe((policy: EditMemVol)=>{
+    this.apiService.EditSiteSupRequest(form.value).subscribe((policy: EditMemVol)=>{
       console.log("Policy created, ", policy);
     });
   }
@@ -68,26 +66,26 @@ export class EditMembersVolunteersComponent implements OnInit {
 
   ///test function
   showww(){
-    console.log(this.EditMembersVol);
+    console.log(this.EditSiteSup);
   }
 
 
 
   //to get the value of radio button for gender
   radioGenderChangeHandeler(event:any){
-    this.EditMembersVol.Gender = event.target.value;
+    this.EditSiteSup.Gender = event.target.value;
   }
 
 
   //to get the value of radio button for news letter
   radioNewsChangeHandeler(event:any){
-    this.EditMembersVol.NewsLetter = event.target.value;
+    this.EditSiteSup.NewsLetter = event.target.value;
   }
 
 
   //to get the value of radio button for status
   radioStatusChangeHandeler(event:any){
-    this.EditMembersVol.Status = event.target.value;
+    this.EditSiteSup.Status = event.target.value;
   }
 
 
@@ -103,7 +101,7 @@ export class EditMembersVolunteersComponent implements OnInit {
 
   //go to the previous page when click close
   goback(){
-    this.myroutter.navigate(['/MemberVolunteers'])
+    this.myroutter.navigate(['/SitesSupervisors'])
   }
 
   ngOnInit(): void {

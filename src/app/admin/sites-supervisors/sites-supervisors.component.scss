@@ -6,13 +6,26 @@
         tr{
             .name{
                 text-align: left;
-                width: 70%;
+                width: 25%;
             }
-            .w-place{
-                width: 30%;
+            .country{
+            
+                width: 20%;
             }
-            .country-u-h4{
+            .city{
+             
+                width: 15%;
+            }
+            .place{
+        
+                width: 20%;
+            }
+            .options{
+                width: 20%;
+            }
+            .phone-u-h4{
                 text-align: left;
+                font-size: 13px!important;
             }
         }
     }

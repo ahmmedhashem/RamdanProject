@@ -10,6 +10,7 @@ import { FormsModule} from '@angular/forms';
 
 
 
+
 import { AppComponent } from './app.component';
 import { LoginComponent } from './admin/login/login.component';
 import { DashboardComponent } from './admin/dashboard/dashboard.component';
@@ -96,6 +97,7 @@ import { UserPrivilegesComponent } from './admin/user-privileges/user-privileges
 import { AddNewUserComponent } from './admin/add-new-user/add-new-user.component';
 import { EditAdminsUserComponent } from './admin/edit-admins-user/edit-admins-user.component';
 import { AdminMyProfileComponent } from './admin/admin-my-profile/admin-my-profile.component';
+import { EditSiteSupervisorComponent } from './admin/edit-site-supervisor/edit-site-supervisor.component';
 
 
 
@@ -188,6 +190,7 @@ import { AdminMyProfileComponent } from './admin/admin-my-profile/admin-my-profi
     AddNewUserComponent,
     EditAdminsUserComponent,
     AdminMyProfileComponent,
+    EditSiteSupervisorComponent,
    
     
     
